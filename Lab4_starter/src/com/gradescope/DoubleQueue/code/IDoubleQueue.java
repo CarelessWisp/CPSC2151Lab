@@ -3,11 +3,11 @@ package com.gradescope.DoubleQueue.code;
 /**IDoubleQueueContract
  *
  *
- *@initialization Ensures:
+ *@initialization Ensures: Queue is MAX_SIZE or smaller
  *
- *@defines:
+ *@defines: Double[] queue, MAX_SIZE
  *
- *@constraints:
+ *@constraints: length of self <= MAX_SIZE
  *
  */
 public interface IDoubleQueue
@@ -19,11 +19,11 @@ public interface IDoubleQueue
     /**dequeueContract
      *
      *
-     *@return
+     *@return val the Double to be removed
      *
-     *@pre
+     *@pre None
      *
-     *@post
+     *@post self = #self with val removed from the front of queue
      *
      */
     public Double dequeue();
@@ -31,11 +31,11 @@ public interface IDoubleQueue
     /**lengthContract
      *
      *
-     *@return
+     *@return size of the list queue
      *
-     *@pre
+     *@pre None
      *
-     *@post
+     *@post length = self size
      *
      */
     public int length();
@@ -43,11 +43,11 @@ public interface IDoubleQueue
     /**toStringContract
      *
      *
-     *@return
+     *@return queue as a String
      *
-     *@pre
+     *@pre None
      *
-     *@post
+     *@post self = String queue
      *
      */
     public String toString();
