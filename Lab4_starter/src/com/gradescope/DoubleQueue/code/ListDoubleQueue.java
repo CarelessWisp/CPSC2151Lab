@@ -22,7 +22,7 @@ public class ListDoubleQueue implements IDoubleQueue
      *
      * @pre maxSize > 0
      *
-     * @post maxListSize = maxSize AND list = new Double[maxListSize]
+     * @post maxListSize = maxSize AND LQueue = new Double[maxListSize]
      *
      */
     public ListDoubleQueue(int maxSize)
@@ -36,9 +36,9 @@ public class ListDoubleQueue implements IDoubleQueue
      *
      * @param val
      *
-     * @pre |list| < maxListSize
+     * @pre |LQueue| < maxListSize
      *
-     * @post [list = #list with val added to left-most unoccupied index] AND listMaxSize = #listMaxSize
+     * @post [LQueue = #LQueue with val added to left-most unoccupied index] AND listMaxSize = #listMaxSize
      *
      */
     @Override
