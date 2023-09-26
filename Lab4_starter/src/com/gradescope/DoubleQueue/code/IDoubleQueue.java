@@ -5,7 +5,7 @@ package com.gradescope.DoubleQueue.code;
  *
  *@initialization Ensures: Queue is MAX_SIZE or smaller
  *
- *@defines: Double[] queue, MAX_SIZE
+ *@defines: queue, MAX_SIZE
  *
  *@constraints: length of self <= MAX_SIZE
  *
