@@ -1,3 +1,7 @@
+/**
+ * Team member names: Isiah Pham, Korey Bryant, Ben Nazurak, Kaylee Pierce
+ */
+
 package com.gradescope.DoubleQueue.code;
 
 /**IDoubleQueueContract
