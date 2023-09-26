@@ -50,18 +50,23 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public Double dequeue()
     {
-
+        return queue.remove(0);
     }
 
     @Override
     public int length()
     {
-
+        return queue.size();
     }
 
     public String toString()
     {
-
+        String ret = "";
+        for(Double d : queue)
+        {
+            ret += ("[" + d + "] ");
+        }
+        return ret;
     }
 
     //-----------------Ignore the functions below this line-----------------------
