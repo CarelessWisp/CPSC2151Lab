@@ -25,8 +25,8 @@ public class ArrayDoubleQueue implements IDoubleQueue
      */
     public ArrayDoubleQueue(int maxSize)
     {
-
-
+        queue = new Double[maxSize];
+        queueMaxSize = maxSize;
     }
 
     /**enqueueContact
@@ -42,7 +42,16 @@ public class ArrayDoubleQueue implements IDoubleQueue
     @Override
     public void enqueue(Double val)
     {
-
+        if (queue[queueMaxSize - 1] == null)
+        {
+            for (int i = 0; queue[i] != null; i++)
+            {
+                if (queue[i] == null)
+                    queue[i] = val;
+            }
+        }
+        else
+            queue[queueMaxSize - 1] = val;
     }
 
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
