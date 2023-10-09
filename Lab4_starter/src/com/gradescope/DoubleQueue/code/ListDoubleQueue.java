@@ -20,13 +20,13 @@ public class ListDoubleQueue implements IDoubleQueue
     private int maxListSize;
 
     /**ListDoubleQueueConstructorContact
+     * Constructs a new ListDoubleQueue with the maximum size.     
      *
-     *
-     * @param maxSize max size of the list
+     * @param maxSize [max size of the list]
      *
      * @pre maxSize > 0
      *
-     * @post maxListSize = maxSize AND LQueue = new Double[maxListSize]
+     * @post maxListSize = maxSize AND self = new Double[maxListSize]
      *
      */
     public ListDoubleQueue(int maxSize)
@@ -36,13 +36,13 @@ public class ListDoubleQueue implements IDoubleQueue
     }
 
     /**enqueueContact
-     *
+     * Enqueues a double value to the queue
      *
      * @param val
      *
-     * @pre |LQueue| < maxListSize
+     * @pre |self| < maxListSize
      *
-     * @post [LQueue = #LQueue with val added to left-most unoccupied index] AND listMaxSize = #listMaxSize
+     * @post [self = #self with val added to left-most unoccupied index] AND listMaxSize = #listMaxSize
      *
      */
     @Override
