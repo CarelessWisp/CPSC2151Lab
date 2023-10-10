@@ -65,7 +65,7 @@ public interface IDoubleQueue<T>
     default T peek() {
         T result = dequeue();
         enqueue(result);
-        for (int i=0; i<length(); i++) {
+        for (int i=1; i<length(); i++) {
             T temp = dequeue();
             enqueue(temp);
         }
