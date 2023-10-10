@@ -56,10 +56,13 @@ public interface IDoubleQueue<T>
      */
     public String toString();
 
-    /**
+     /** peekContract
      *
-     * @return
+     * @return val at the left-most position of the queue
+     * 
+     * @pre None
      *
+     * @post self = #self AND result = front position
      *
      */
     default T peek() {
