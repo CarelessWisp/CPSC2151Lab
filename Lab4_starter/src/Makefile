@@ -1,8 +1,9 @@
 default:
-	javac -cp com/gradescope/DoubleQueue/code/*.java
+	javac com/gradescope/DoubleQueue/code/*.java Driver/DoubleQueueDriver.java
 
 run:
-	java Driver/DoubleQueueDriver.java
+	java Driver/DoubleQueueDriver
 
 clean:
 	rm -f com/gradescope/DoubleQueue/code/*.class
+	rm -f Driver/*.class
