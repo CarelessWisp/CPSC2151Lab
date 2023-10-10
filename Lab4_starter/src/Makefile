@@ -5,4 +5,4 @@ run:
 	java Driver/DoubleQueueDriver.java
 
 clean:
-	rm -f *.class
+	rm -f com/gradescope/DoubleQueue/code/*.class
