@@ -62,7 +62,7 @@ public interface IDoubleQueue<T>
      * 
      * @pre None
      *
-     * @post self = #self AND result = front position
+     * @post peek = [value at the front] AND self = #self
      *
      */
     default T peek() {
