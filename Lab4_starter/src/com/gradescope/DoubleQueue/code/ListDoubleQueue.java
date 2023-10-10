@@ -26,7 +26,7 @@ public class ListDoubleQueue<T> implements IDoubleQueue<T>
      *
      * @pre maxSize > 0
      *
-     * @post maxListSize = maxSize AND self = new ArrayList<T>[maxListSize]
+     * @post {@literal maxListSize = maxSize AND self = new ArrayList<T>[maxListSize]}
      *
      */
     public ListDoubleQueue(int maxSize)
