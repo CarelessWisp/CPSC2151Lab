@@ -7,35 +7,35 @@ package com.gradescope.DoubleQueue.code;
 /**IDoubleQueueContract
  *
  *
- *@initialization Ensures: Queue is MAX_SIZE or smaller
+ *@initialization Ensures: self is max_queue_size or smaller
  *
- *@defines: queue, MAX_SIZE
+ *@defines: max_queue_size
  *
- *@constraints: length of self <= MAX_SIZE
+ *@constraints: length of self <= max_queue_size
  *
  */
-public interface IDoubleQueue
+public interface IDoubleQueue<T>
 {
 
     //This function's contracts are in the individual classes
-    public void enqueue(Double val);
+    public void enqueue(T val);
 
     /**dequeueContract
      *
      *
-     *@return val the Double to be removed
+     *@return val the element to be removed
      *
      *@pre None
      *
      *@post self = #self with val removed from the front of queue
      *
      */
-    public Double dequeue();
+    public T dequeue();
 
     /**lengthContract
      *
      *
-     *@return size of the list queue
+     *@return size of the queue
      *
      *@pre None
      *

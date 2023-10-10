@@ -6,37 +6,37 @@ package com.gradescope.DoubleQueue.code;
 
 import java.util.ArrayList;
 
-/**ListDoubleQueueContract
- *
+/**
+ * List implementation for the generic queue.
  *
  * @invariant: maxListSize > 0
  *
- * @corresponds: max_list_size = maxListSize
+ * @corresponds: max_queue_size = maxListSize
  *
  */
-public class ListDoubleQueue implements IDoubleQueue
+public class ListDoubleQueue<T> implements IDoubleQueue<T>
 {
-    private ArrayList<Double> LQueue;
+    private ArrayList<T> LQueue;
     private int maxListSize;
 
-    /**ListDoubleQueueConstructorContact
+    /**
      * Constructs a new ListDoubleQueue with the maximum size.     
      *
      * @param maxSize [max size of the list]
      *
      * @pre maxSize > 0
      *
-     * @post maxListSize = maxSize AND self = new Double[maxListSize]
+     * @post maxListSize = maxSize AND self = new ArrayList<T>[maxListSize]
      *
      */
     public ListDoubleQueue(int maxSize)
     {
-        this.LQueue = new ArrayList<Double>();
+        this.LQueue = new ArrayList<T>();
         this.maxListSize = maxSize;
     }
 
-    /**enqueueContact
-     * Enqueues a double value to the queue
+    /**
+     * Enqueues a value to the queue
      *
      * @param val
      *
@@ -46,7 +46,7 @@ public class ListDoubleQueue implements IDoubleQueue
      *
      */
     @Override
-    public void enqueue(Double val)
+    public void enqueue(T val)
     {
         if(LQueue.size() == this.maxListSize)
             LQueue.set(this.maxListSize-1, val);
@@ -57,7 +57,7 @@ public class ListDoubleQueue implements IDoubleQueue
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
 
     @Override
-    public Double dequeue()
+    public T dequeue()
     {
         return LQueue.remove(0);
     }
@@ -73,9 +73,9 @@ public class ListDoubleQueue implements IDoubleQueue
     public String toString()
     {
         String ret = "";
-        for(Double d : LQueue)
+        for(T t : LQueue)
         {
-            ret += ("[" + d + "] ");
+            ret += ("[" + t + "] ");
         }
         return ret;
     }

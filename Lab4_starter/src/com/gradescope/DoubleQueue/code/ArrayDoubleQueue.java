@@ -4,39 +4,41 @@
 
 package com.gradescope.DoubleQueue.code;
 
-/**ArrayDoubleQueueContract
- * Array implementation for the Double queue.
+import java.lang.reflect.Array;
+
+/**
+ * Array implementation for the generic queue.
  *
  * @invariant: queueMaxSize > 0
  *
  * @corresponds: max_queue_size = queueMaxSize
  *
  */
-public class ArrayDoubleQueue implements IDoubleQueue
+public class ArrayDoubleQueue<T> implements IDoubleQueue<T>
 {
-    private Double[] queue;
+    private T[] queue;
     private int queueMaxSize;
 
-    /**ArrayDoubleQueueConstructorContact
-     * Constructor for the arrayListDouble queue.
+    /**
+     * Constructor for ArrayDoubleQueue.
      *
      * @param maxSize max size of the array
      *
      * @pre maxSize > 0
      *
-     * @post queueMaxSize = maxSize AND self = new Double[queueMaxSize].
+     * @post queueMaxSize = maxSize AND self = new T[queueMaxSize].
      *
      */
     public ArrayDoubleQueue(int maxSize)
     {
-        queue = new Double[maxSize];
+        queue = (T[])new Object[maxSize];
         queueMaxSize = maxSize;
     }
 
-    /**enqueueContact
+    /**
      * Enqueue adds an item to the queue.
      *
-     * @param val the Double to be added
+     * @param val the element to be added
      *
      * @pre |self| < queueMaxSize
      *
@@ -44,7 +46,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
      *
      */
     @Override
-    public void enqueue(Double val)
+    public void enqueue(T val)
     {
         for (int i = 0; i < queueMaxSize; i++)
         {
@@ -59,9 +61,9 @@ public class ArrayDoubleQueue implements IDoubleQueue
     //Note: The below 3 functions intentionally do not have contracts. You do not need to add them.
 
     @Override
-    public Double dequeue()
+    public T dequeue()
     {
-        Double temp = queue[0];
+        T temp = queue[0];
         for (int i=1; i<queueMaxSize; i++) {
             queue[i-1] = queue[i];
         }
@@ -82,9 +84,9 @@ public class ArrayDoubleQueue implements IDoubleQueue
     public String toString()
     {
         String ret = "";
-        for(Double d : queue)
+        for(T t : queue)
         {
-            ret += ("[" + d + "] ");
+            ret += ("[" + t + "] ");
         }
         return ret;
     }
@@ -95,7 +97,7 @@ public class ArrayDoubleQueue implements IDoubleQueue
         return this.queueMaxSize;
     }
 
-    public Double[] getQueue()
+    public T[] getQueue()
     {
         return this.queue;
     }
